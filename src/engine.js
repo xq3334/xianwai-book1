@@ -1,6 +1,8 @@
 // 主引擎：场景推进、分支跳转、结局判定
 import { state } from './state.js';
-import { chapters, chapterOrder } from './content/chapters.js';
+
+// 切换新旧版本：将下面的 'chapters.js' 改为 'chapters-v2.js' 即可使用新版剧本
+import { chapters, chapterOrder } from './content/chapters-v2.js';
 import { renderDialogue, renderChoices } from './ui/dialogue.js';
 import { showOverlay, hideOverlay } from './ui/overlay.js';
 import { renderHandbook } from './ui/handbook.js';
