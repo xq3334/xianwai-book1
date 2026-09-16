@@ -547,7 +547,133 @@ choiceList.innerHTML = choicesArray.map((choice, idx) => {
 
 ---
 
+### ✅ [已修复 2026-09-16] 严重Bug：线上页面按钮全部无响应
+
+**问题描述**：
+线上 GitHub Pages 打开后画面正常，但所有按钮点不动。
+
+**根本原因**：
+GitHub Pages 构建的是 `master` 分支，而所有修复都推到了 `main` 分支。
+`master` 上的 `src/engine.js` 从 `chapters-v2.js` 导入了 `chapterOrder`，但 `master` 版本的
+`chapters-v2.js` 只导出了 `chapters` 和 `chapterList`，没有 `chapterOrder`。
+
+```
+The requested module './content/chapters-v2.js' does not provide an export named 'chapterOrder'
+```
+
+ES 模块的导入是在执行前静态解析的。这个错误让整个模块图直接中止，
+`main.js` 里的 `engine.init()` 从未执行，所以事件监听器一个都没绑上。
+HTML 和 CSS 是静态的，所以画面看起来完全正常 —— 这正是它难以定位的原因。
+
+**关键教训**：
+「画面正常但完全没有交互」几乎总是模块加载失败，而不是某个按钮的逻辑写错了。
+
+**修复方式**：
+`main` 分支已包含 `export { chapterList as chapterOrder };`，且 `main` 是 `master` 的直接后继
+（`git merge-base origin/master origin/main` 等于 master 的 HEAD），因此把 `main` 快进合并到
+`master` 即可，不会丢任何文件（`master` 162 个文件，`main` 170 个，是严格超集）。
+
+---
+
+### ✅ [已修复 2026-09-16] 严重Bug：进入第四章即卡死
+
+**问题描述**：
+章节入口节点名不统一：
+- 序章 ~ 第三章：入口节点叫 `start`
+- 第四章 ~ 终章：入口节点叫 `opening`
+
+每个章节都用 `start: 'opening'` 字段声明了自己的入口，但引擎完全忽略这个字段，
+在 `finishChapter()` 和 `showChapterSelect()` 里硬编码了 `loadNode(chapterId, 'start')`。
+
+**影响范围**：
+ch4 / ch5 / ch6 / ch7 / ch8 / finale —— 共 6 个章节。
+第三章结束后控制台报 `节点不存在：ch4 / start`，然后画面停在原地不动，游戏无法继续。
+**这意味着之前修复的 21 个选择节点其实一个都到不了。**
+
+**修复方式**：
+
+在 `src/engine.js` 新增 `resolveEntryNodeId()`，以章节自己声明的 `start` 字段为准：
+
+```javascript
+resolveEntryNodeId(chapterId) {
+  const chapter = chapters[chapterId];
+  if (!chapter) return 'start';
+
+  const declaredEntryNodeId = chapter.start;
+  if (declaredEntryNodeId && chapter.nodes[declaredEntryNodeId]) {
+    return declaredEntryNodeId;
+  }
+
+  if (chapter.nodes.start) return 'start';
+  if (chapter.nodes.opening) return 'opening';
+
+  return Object.keys(chapter.nodes)[0];
+}
+```
+
+两处硬编码 `'start'` 的调用点改为使用它：
+- `finishChapter()`：`this.loadNode(nextChapterId, this.resolveEntryNodeId(nextChapterId))`
+- `showChapterSelect()`：`this.loadNode(chapterId, this.resolveEntryNodeId(chapterId))`
+
+这样新增章节时无论入口叫什么，只要在章节对象里声明 `start` 字段就能正常衔接。
+
+---
+
+## 自动化校验
+
+新增两个脚本，用来在本地抓出「浏览器里只表现为卡住」的剧本问题：
+
+```bash
+npm run validate   # 校验节点引用、选择格式、章节衔接、孤立节点
+npm run simulate   # 模拟 5 条不同选择路线，走完全程
+npm test           # 两个一起跑
+npm run serve      # 本地预览 http://localhost:8090
+```
+
+`validate-chapters.mjs` 检查的内容：
+- 每章能否找到入口节点（`start` / `opening` / 声明的 `start` 字段）
+- 所有 `next` 指向的节点是否真实存在
+- 选择节点是否有选项、每个选项是否有文本和 `next`
+- 每章是否有结束出口（`END` / `ENDING:` / `type: 'end'`）
+- 是否存在无法从入口到达的孤立节点
+
+`simulate-playthrough.mjs` 会用「每次都选第 N 个选项」的策略跑 5 条路线，
+验证每条路线都能从序章走到结局。当前结果：
+
+```
+OK  always-pick-#0: 章节 10/10，选择 28 次
+OK  always-pick-#1: 章节 10/10，选择 25 次
+OK  always-pick-#2: 章节 10/10，选择 27 次
+OK  always-pick-#3: 章节 10/10，选择 26 次
+OK  always-pick-#4: 章节 10/10，选择 26 次
+```
+
+修复前跑同样的脚本，5 条路线全部停在 `章节 4/10`。
+
+---
+
+## 部署说明
+
+**GitHub Pages 构建的是 `master` 分支**，不是 `main`。
+推送修复后必须同步 `master`，否则线上跑的还是旧代码：
+
+```bash
+git push origin main
+git checkout master && git merge main && git push origin master
+git checkout main
+```
+
+---
+
 ## 修复历史
+
+### 2026-09-16
+- **[Critical]** 修复线上按钮全部无响应：`master` 分支缺少 `chapterOrder` 导出，导致整个 ES 模块图加载中止
+- **[Critical]** 修复进入第四章即卡死：引擎硬编码入口节点为 `'start'`，但 ch4 之后的章节入口叫 `'opening'`
+- 新增 `resolveEntryNodeId()`，改为读取章节自己声明的 `start` 字段
+- 新增 `validate-chapters.mjs` 和 `simulate-playthrough.mjs` 自动化校验
+- 新增 `serve.mjs` 本地预览服务器，`package.json` 补齐 scripts
+- 修改文件：`src/engine.js`、`package.json`
 
 ### 2026-09-14
 - **[Critical]** 修复选择节点格式不兼容问题，使引擎支持 `choices`/`options` 和 `text`/`label` 双格式

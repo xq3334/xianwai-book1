@@ -96,6 +96,23 @@ export const engine = {
     this.loadNode(state.currentChapter, state.currentNode);
   },
 
+  // 章节入口节点名不统一：序章到第三章叫 'start'，第四章之后叫 'opening'。
+  // 以章节自己声明的 start 字段为准，避免进章即卡死。
+  resolveEntryNodeId(chapterId) {
+    const chapter = chapters[chapterId];
+    if (!chapter) return 'start';
+
+    const declaredEntryNodeId = chapter.start;
+    if (declaredEntryNodeId && chapter.nodes[declaredEntryNodeId]) {
+      return declaredEntryNodeId;
+    }
+
+    if (chapter.nodes.start) return 'start';
+    if (chapter.nodes.opening) return 'opening';
+
+    return Object.keys(chapter.nodes)[0];
+  },
+
   loadNode(chapterId, nodeId) {
     const chapter = chapters[chapterId];
     if (!chapter) {
@@ -211,7 +228,7 @@ export const engine = {
     }
 
     state.unlockChapter(nextChapterId);
-    this.loadNode(nextChapterId, 'start');
+    this.loadNode(nextChapterId, this.resolveEntryNodeId(nextChapterId));
   },
 
   getNextChapterId(currentChapterId) {
@@ -261,7 +278,7 @@ export const engine = {
       if (!chapterId) return;
       hideOverlay();
       this.switchScreen('scene-screen');
-      this.loadNode(chapterId, 'start');
+      this.loadNode(chapterId, this.resolveEntryNodeId(chapterId));
     });
   },
 
