@@ -456,7 +456,9 @@ export const chapter1 = {
       art: 'night-desk', 
       speaker: '', 
       text: '你看着这条消息，有种不好的预感。', 
-      next: 'END' 
-    }
+      next: 'end' 
+    },
+
+    end: { type: 'end', nextChapter: 'ch2' }
   }
 };

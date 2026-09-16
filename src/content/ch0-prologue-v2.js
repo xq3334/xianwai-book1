@@ -444,7 +444,9 @@ export const prologue = {
       art: 'night-desk', 
       speaker: '', 
       text: '你还没回复，他又发来一个3000字的文档。你盯着屏幕，不知道该说什么。', 
-      next: 'END' 
-    }
+      next: 'end' 
+    },
+
+    end: { type: 'end', nextChapter: 'ch1' }
   }
 };
