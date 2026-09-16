@@ -1,6 +1,8 @@
 // 第二章：许禾的沼泽（基于新大纲v2，简化版）
 export const chapter2 = {
+  id: 'ch2',
   title: '第二章：许禾的沼泽',
+  start: 'start',
   nodes: {
     start: { 
       type: 'dialogue', 

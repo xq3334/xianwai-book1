@@ -1,5 +1,6 @@
 // 舞台渲染：加载场景背景与人物立绘，按说话人切换表情
 // 资源为 WebP（体积约为 PNG 的 4%，且保留立绘的透明通道）
+import { resolveCharacterImage, resolveSceneImage } from './fallback.js';
 
 const SCENE_PATH = 'assets/scenes';
 const CHARACTER_PATH = 'assets/characters';
@@ -16,60 +17,54 @@ const SCENE_ALIASES = {
 
 // 说话人 → 立绘文件前缀
 export const SPEAKER_PORTRAITS = {
-  '林澈': 'linche',
-  '顾言': 'guyan',
-  '许禾': 'xuhe',
-  '沈老师': 'shen',
-  '妈妈': 'mother',
+  '林澈': 'linche-grin',
+  '顾言': 'guyan-sharp',
+  '许禾': 'xuhe-sorry',
+  '沈老师': 'protagonist',
+  '妈妈': 'protagonist',
 };
 
-// 每个角色实际存在的表情后缀，用于兜底判断
-const AVAILABLE_EMOTIONS = {
-  protagonist: ['worry', 'smile', 'firm'],
-  linche: ['plead', 'sulk', 'grin'],
-  guyan: ['sharp', 'pause', 'soft'],
-  xuhe: ['sorry', 'happy', 'try'],
-  shen: ['ask', 'wait', 'nod'],
-  mother: ['worry', 'upset', 'quiet'],
-};
+// 基准资源：用户指定的6个WebP文件
+const BASELINE_CHARACTERS = [
+  'protagonist',
+  'linche-grin',
+  'guyan-sharp',
+  'xuhe-sorry'
+];
 
-const ALL_SCENES = [
-  'classroom-day', 'classroom-sunset', 'corridor', 'stairwell',
-  'office', 'home-dining', 'bedroom-night', 'library',
-  'hall', 'school-gate', 'entangled', 'clarity',
+const BASELINE_SCENES = [
+  'classroom-day',
+  'bedroom-night'
 ];
 
 export function resolveSceneFile(sceneId) {
-  const name = SCENE_ALIASES[sceneId] || sceneId;
-  return ALL_SCENES.includes(name) ? name : 'classroom-day';
+  const aliased = SCENE_ALIASES[sceneId] || sceneId;
+  return resolveSceneImage(aliased);
 }
 
-// 立绘文件名：基础名 + 表情后缀（表情不存在时回退到基础立绘）
+// 立绘文件名：所有变体通过fallback映射到4个基准角色图
 export function resolvePortraitFile(portraitId, emotion) {
-  if (!emotion) return portraitId;
-  const supported = AVAILABLE_EMOTIONS[portraitId] || [];
-  return supported.includes(emotion) ? `${portraitId}-${emotion}` : portraitId;
+  const fullId = emotion ? `${portraitId}-${emotion}` : portraitId;
+  return resolveCharacterImage(fullId);
 }
 
 // 预加载：避免切场景时闪白
 export function preloadArtwork() {
-  ALL_SCENES.forEach((name) => {
+  BASELINE_SCENES.forEach((name) => {
     const image = new Image();
     image.src = `${SCENE_PATH}/${name}.${IMAGE_EXTENSION}`;
   });
 
-  Object.entries(AVAILABLE_EMOTIONS).forEach(([portraitId, emotions]) => {
-    [portraitId, ...emotions.map((emotion) => `${portraitId}-${emotion}`)].forEach((file) => {
-      const image = new Image();
-      image.src = `${CHARACTER_PATH}/${file}.${IMAGE_EXTENSION}`;
-    });
+  BASELINE_CHARACTERS.forEach((file) => {
+    const image = new Image();
+    image.src = `${CHARACTER_PATH}/${file}.${IMAGE_EXTENSION}`;
   });
 }
 
 export function renderTitleArt() {
   const container = document.getElementById('title-art');
   container.innerHTML =
-    `<img class="title-art-image" src="${SCENE_PATH}/school-gate.${IMAGE_EXTENSION}" alt="">`;
+    `<img class="title-art-image" src="${SCENE_PATH}/classroom-day.${IMAGE_EXTENSION}" alt="">`;
 }
 
 let currentSceneFile = null;

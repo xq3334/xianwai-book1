@@ -1,6 +1,8 @@
 // 第三章：顾言的刺（基于新大纲v2）
 export const chapter3 = {
+  id: 'ch3',
   title: '第三章：顾言的刺',
+  start: 'start',
   nodes: {
     // 场景1：周二，小组讨论（炸裂现场）
     start: { 

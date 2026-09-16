@@ -1,6 +1,8 @@
 // 第一章：林澈的边界（基于新大纲v2，兼容原引擎格式）
 export const chapter1 = {
+  id: 'ch1',
   title: '第一章：林澈的边界',
+  start: 'start',
   nodes: {
     // 场景1：周二中午，小组讨论
     start: { 

@@ -35,3 +35,5 @@ export const chapterList = [
   { id: 'ch8', title: '第八章：林澈的摊牌', chapter: ch8 },
   { id: 'finale', title: '终章：学期末的选择', chapter: finale }
 ];
+
+export { chapterList as chapterOrder };

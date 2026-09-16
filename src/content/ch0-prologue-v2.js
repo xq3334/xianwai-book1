@@ -1,6 +1,8 @@
 // 序章：意外的任命（基于新大纲v2，兼容原引擎格式）
 export const prologue = {
+  id: 'ch0',
   title: '序章：意外的任命',
+  start: 'start',
   nodes: {
     start: { 
       type: 'dialogue', 
