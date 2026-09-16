@@ -10,7 +10,7 @@ export const ch7 = {
     },
 
     teacher_calls: {
-      chars: [{ id: 'teacher', img: 'teacher-stern', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '班主任', text: '"有同学反映，你泄露了心理问卷的内容。"' },
       next: 'serious_problem'
     },
@@ -26,7 +26,7 @@ export const ch7 = {
     },
 
     teacher_questions: {
-      chars: [{ id: 'teacher', img: 'teacher-suspicious', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '班主任', text: '"那为什么会有这个传言？"' },
       next: 'you_accuse'
     },
@@ -37,7 +37,7 @@ export const ch7 = {
     },
 
     teacher_evidence: {
-      chars: [{ id: 'teacher', img: 'teacher-stern', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '班主任', text: '皱眉："你有证据吗？"' },
       next: 'choice_evidence'
     },
@@ -57,7 +57,7 @@ export const ch7 = {
     },
 
     teacher_reads: {
-      chars: [{ id: 'teacher', img: 'teacher-reading', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen', pos: 'center' }],
       narrator: true,
       text: '班主任仔细看了看。',
       next: 'teacher_not_enough'
@@ -70,14 +70,14 @@ export const ch7 = {
 
     no_evidence: {
       text: '"我没有证据，但我没做过。"',
-      chars: [{ id: 'teacher', img: 'teacher-disappointed', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen', pos: 'center' }],
       dialog: { char: '班主任', text: '叹气："没有证据，我也很难处理。"' },
       next: 'adjustment'
     },
 
     give_up: {
       text: '"反正您也不信，随便吧。"',
-      chars: [{ id: 'teacher', img: 'teacher-angry', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '班主任', text: '脸色一沉："什么态度？"' },
       next: 'immediate_suspension'
     },
@@ -98,7 +98,7 @@ export const ch7 = {
     },
 
     teacher_调整: {
-      chars: [{ id: 'teacher', img: 'teacher-neutral', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen', pos: 'center' }],
       dialog: { char: '班主任', text: '"不是停职，是……调整。"' },
       next: 'leave_office'
     },
@@ -118,14 +118,14 @@ export const ch7 = {
     },
 
     see_xuhe: {
-      chars: [{ id: 'xuhe', img: 'xuhe-guilty', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       narrator: true,
       text: '许禾远远看了你一眼，立刻低下头。',
       next: 'guyan_waiting'
     },
 
     guyan_waiting: {
-      chars: [{ id: 'guyan', img: 'guyan-male-concerned', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-pause', pos: 'center' }],
       narrator: true,
       text: '顾言在楼梯口等你。',
       dialog: { char: '顾言', text: '"听说了。"' },
@@ -139,7 +139,7 @@ export const ch7 = {
     },
 
     guyan_offers_help: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"要不要搞清楚到底是谁传的？"' },
       next: 'you_puzzled'
     },
@@ -165,14 +165,14 @@ export const ch7 = {
 
     counterattack: {
       text: '"好，帮我查。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-determined', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '点头："给我一天时间。"' },
       next: 'days_later'
     },
 
     let_go: {
       text: '"算了，清者自清。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-disappointed', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '皱眉："你确定？谣言不会自己消失。"' },
       next: 'inner_tired'
     },
@@ -186,7 +186,7 @@ export const ch7 = {
 
     confront_xuhe: {
       text: '"我自己去问许禾。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"需要我陪你吗？"' },
       next: 'choice_alone_or_together'
     },
@@ -201,7 +201,7 @@ export const ch7 = {
 
     alone_confront: {
       text: '"不用，我自己去。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"行。我在天台等你。"' },
       next: 'find_xuhe'
     },
@@ -219,7 +219,7 @@ export const ch7 = {
     },
 
     xuhe_scared: {
-      chars: [{ id: 'xuhe', img: 'xuhe-scared', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       text: '"我们谈谈。"',
       dialog: { char: '许禾', text: '缩了一下："我……我要去吃饭……"' },
       next: 'you_direct'
@@ -231,7 +231,7 @@ export const ch7 = {
     },
 
     xuhe_denies: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '眼泪掉下来："我没有……我真的只是随口说的……"' },
       next: 'xuhe_excuse'
     },
@@ -247,7 +247,7 @@ export const ch7 = {
     },
 
     xuhe_breaks: {
-      chars: [{ id: 'xuhe', img: 'xuhe-angry-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '突然爆发："对！我就是故意的！"' },
       next: 'xuhe_accusation'
     },
@@ -279,7 +279,7 @@ export const ch7 = {
     },
 
     xuhe_not_meant: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '"我没想毁掉你……我只是……"' },
       next: 'xuhe_wanted_you_to_know'
     },
@@ -308,7 +308,7 @@ export const ch7 = {
 
     explain: {
       text: '"我从来没有抛弃你。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-confused', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '"可是……"' },
       next: 'no_response'
     },
@@ -321,7 +321,7 @@ export const ch7 = {
 
     sarcastic: {
       text: '"那现在你满意了？"',
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       narrator: true,
       text: '许禾哭得更厉害了。你转身离开。',
       next: 'go_to_rooftop'
@@ -329,7 +329,7 @@ export const ch7 = {
 
     end_it: {
       text: '"我们结束了。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-shocked', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       narrator: true,
       text: '许禾愣住了。你转身离开，没有回头。',
       next: 'go_to_rooftop'
@@ -349,7 +349,7 @@ export const ch7 = {
     },
 
     guyan_waiting_rooftop: {
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       narrator: true,
       text: '顾言坐在天台，风很大。你坐到他旁边。',
       next: 'guyan_water_bottle'
@@ -378,7 +378,7 @@ export const ch7 = {
 
     ask_if_wrong: {
       text: '"我做错了吗？"',
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"没有。"' },
       next: 'guyan_reality'
     },
@@ -400,7 +400,7 @@ export const ch7 = {
 
     express_tired: {
       text: '"我好累。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"累就对了。"' },
       next: 'guyan_change_is_hard'
     },
@@ -433,7 +433,7 @@ export const ch7 = {
     },
 
     guyan_bitter_smile: {
-      chars: [{ id: 'guyan', img: 'guyan-male-bitter-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '愣住，然后苦笑："没有。"' },
       next: 'guyan_still_struggling'
     },
@@ -465,7 +465,7 @@ export const ch7 = {
     },
 
     guyan_smiles: {
-      chars: [{ id: 'guyan', img: 'guyan-male-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       narrator: true,
       text: '顾言看着你，慢慢笑了：',
       dialog: { char: '顾言', text: '"……行。"' },
@@ -486,7 +486,7 @@ export const ch7 = {
     },
 
     teacher_shen_heard: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '"听说你遇到了麻烦。"' },
       next: 'you_nod'
     },
@@ -507,7 +507,7 @@ export const ch7 = {
     },
 
     teacher_praise: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-smile', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-nod', pos: 'center' }],
       dialog: { char: '沈老师', text: '"你已经处理得很好了。"' },
       next: 'teacher_explains'
     },

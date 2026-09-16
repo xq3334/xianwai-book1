@@ -17,9 +17,9 @@ export const ch8 = {
 
     atmosphere_better: {
       chars: [
-        { id: 'linche', img: 'linche-presenting', pos: 'left' },
-        { id: 'guyan', img: 'guyan-male-listening', pos: 'center' },
-        { id: 'xuhe', img: 'xuhe-nervous', pos: 'right' }
+        { id: 'linche', img: 'linche-grin', pos: 'left' },
+        { id: 'guyan', img: 'guyan-pause', pos: 'center' },
+        { id: 'xuhe', img: 'xuhe-try', pos: 'right' }
       ],
       narrator: true,
       text: '气氛比之前好多了，但仍然微妙。',
@@ -40,19 +40,19 @@ export const ch8 = {
     },
 
     discussion_ends: {
-      chars: [{ id: 'linche', img: 'linche-slight-smile', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '"那就这样，明天答辩。"' },
       next: 'guyan_thanks'
     },
 
     guyan_thanks: {
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"辛苦了。"' },
       next: 'xuhe_thanks'
     },
 
     xuhe_thanks: {
-      chars: [{ id: 'xuhe', img: 'xuhe-shy-smile', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       dialog: { char: '许禾', text: '"谢谢大家……"' },
       next: 'inner_best_moment'
     },
@@ -78,7 +78,7 @@ export const ch8 = {
     },
 
     teacher_comments: {
-      chars: [{ id: 'teacher', img: 'teacher-evaluating', pos: 'center' }],
+      chars: [{ id: 'teacher', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '老师', text: '"整体不错，但能看出来……团队磨合得比较痛苦。"' },
       next: 'teacher_comments_2'
     },
@@ -100,19 +100,19 @@ export const ch8 = {
     },
 
     linche_disappointed: {
-      chars: [{ id: 'linche', img: 'linche-disappointed', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '看起来有点失落："我以为能到90……"' },
       next: 'guyan_enough'
     },
 
     guyan_enough: {
-      chars: [{ id: 'guyan', img: 'guyan-male-casual', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '"够了，这个组能活到现在就不错了。"' },
       next: 'xuhe_blames_self'
     },
 
     xuhe_blames_self: {
-      chars: [{ id: 'xuhe', img: 'xuhe-guilty', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '小声说："都怪我拖后腿……"' },
       next: 'you_comfort'
     },
@@ -130,7 +130,7 @@ export const ch8 = {
     },
 
     linche_pulls_you: {
-      chars: [{ id: 'linche', img: 'linche-serious', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche', pos: 'left' }],
       narrator: true,
       text: '林澈把你拉到天台。',
       dialog: { char: '林澈', text: '"我想跟你说件事。"' },
@@ -144,7 +144,7 @@ export const ch8 = {
     },
 
     linche_admits: {
-      chars: [{ id: 'linche', img: 'linche-nervous', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '"我知道……这学期我做了很多让你不舒服的事。"' },
       next: 'linche_lists'
     },
@@ -161,7 +161,7 @@ export const ch8 = {
     },
 
     linche_thought_helping: {
-      chars: [{ id: 'linche', img: 'linche-sad', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '"我以为我是在帮你。"' },
       next: 'linche_guyan_right'
     },
@@ -184,7 +184,7 @@ export const ch8 = {
     },
 
     linche_fear: {
-      chars: [{ id: 'linche', img: 'linche-vulnerable', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '"害怕你不需要我了，就会离开我。"' },
       next: 'linche_turns_away'
     },
@@ -196,7 +196,7 @@ export const ch8 = {
     },
 
     linche_backstory: {
-      chars: [{ id: 'linche', img: 'linche-back-turned', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '"我从小就是这样。"' },
       next: 'linche_parents_divorced'
     },
@@ -222,7 +222,7 @@ export const ch8 = {
     },
 
     linche_turns_back: {
-      chars: [{ id: 'linche', img: 'linche-vulnerable', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       narrator: true,
       text: '他转过来看着你：',
       next: 'linche_panicked'
@@ -244,7 +244,7 @@ export const ch8 = {
     },
 
     linche_conflicted: {
-      chars: [{ id: 'linche', img: 'linche-crying', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '"但你越来越独立。这让我既高兴，又害怕。"' },
       next: 'choice_respond'
     },
@@ -261,7 +261,7 @@ export const ch8 = {
 
     comfort: {
       text: '"我不会离开你。"',
-      chars: [{ id: 'linche', img: 'linche-relieved', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '松了口气："真的？"' },
       next: 'you_nod'
     },
@@ -272,7 +272,7 @@ export const ch8 = {
     },
 
     linche_hugs: {
-      chars: [{ id: 'linche', img: 'linche-smile', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       narrator: true,
       text: '林澈笑了，但你知道——他的模式还没真正改变。',
       next: 'end_semester'
@@ -280,7 +280,7 @@ export const ch8 = {
 
     honest: {
       text: '"但你这样……我确实想离开。"',
-      chars: [{ id: 'linche', img: 'linche-shocked', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '愣住了，眼神里有受伤。' },
       next: 'you_continue_honest'
     },
@@ -291,7 +291,7 @@ export const ch8 = {
     },
 
     linche_understands: {
-      chars: [{ id: 'linche', img: 'linche-sad', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '低下头，沉默了很久："……我明白了。"' },
       next: 'linche_will_try'
     },
@@ -303,13 +303,13 @@ export const ch8 = {
 
     core_truth: {
       text: '"你不需要让自己那么有用。"',
-      chars: [{ id: 'linche', img: 'linche-shocked', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '愣住，眼泪突然掉下来。' },
       next: 'linche_questions_value'
     },
 
     linche_questions_value: {
-      chars: [{ id: 'linche', img: 'linche-crying', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '"但如果我没用了……我还有什么价值？"' },
       next: 'you_answer_value'
     },
@@ -341,7 +341,7 @@ export const ch8 = {
     },
 
     linche_cries: {
-      chars: [{ id: 'linche', img: 'linche-crying', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       narrator: true,
       text: '林澈哭了，很久没说话。',
       next: 'linche_will_try_2'
@@ -369,7 +369,7 @@ export const ch8 = {
     },
 
     linche_continues: {
-      chars: [{ id: 'linche', img: 'linche-sad', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '"……对不起。我会改的。"' },
       next: 'end_semester'
     },
@@ -382,7 +382,7 @@ export const ch8 = {
     },
 
     guyan_sits: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       narrator: true,
       text: '你在图书馆，顾言坐到对面。',
       dialog: { char: '顾言', text: '"我跟我妈说了。"' },
@@ -405,7 +405,7 @@ export const ch8 = {
     },
 
     guyan_no: {
-      chars: [{ id: 'guyan', img: 'guyan-male-bitter-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '苦笑："没有。她说我疯了。"' },
       next: 'guyan_but_said'
     },
@@ -422,7 +422,7 @@ export const ch8 = {
     },
 
     guyan_realization: {
-      chars: [{ id: 'guyan', img: 'guyan-male-thinking', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-pause', pos: 'center' }],
       dialog: { char: '顾言', text: '"我以前觉得，说了没用，不如不说。"' },
       next: 'guyan_learned'
     },
@@ -438,7 +438,7 @@ export const ch8 = {
     },
 
     guyan_thanks_you: {
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '看着你："谢谢你。"' },
       next: 'you_did_nothing'
     },
@@ -461,7 +461,7 @@ export const ch8 = {
     },
 
     xuhe_chases: {
-      chars: [{ id: 'xuhe', img: 'xuhe-determined', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       narrator: true,
       text: '许禾追上你。',
       dialog: { char: '许禾', text: '"等一下！"' },
@@ -475,7 +475,7 @@ export const ch8 = {
     },
 
     xuhe_apologizes: {
-      chars: [{ id: 'xuhe', img: 'xuhe-sincere', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       dialog: { char: '许禾', text: '"我……我想跟你道歉。"' },
       next: 'xuhe_rumor_apology'
     },
@@ -539,7 +539,7 @@ export const ch8 = {
 
     accept_apology: {
       text: '"我接受你的道歉。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-relieved', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       dialog: { char: '许禾', text: '松了口气："谢谢你……"' },
       next: 'chapter_end'
     },
@@ -557,7 +557,7 @@ export const ch8 = {
     },
 
     xuhe_smiles: {
-      chars: [{ id: 'xuhe', img: 'xuhe-smile', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       narrator: true,
       text: '许禾第一次露出了真正的笑容。',
       next: 'chapter_end'
@@ -565,7 +565,7 @@ export const ch8 = {
 
     warn: {
       text: '"以后不要再这样了。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-guilty', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '点头："我知道了。"' },
       next: 'chapter_end'
     },
@@ -577,7 +577,7 @@ export const ch8 = {
     },
 
     xuhe_understands: {
-      chars: [{ id: 'xuhe', img: 'xuhe-understanding', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       narrator: true,
       text: '许禾似乎明白了什么，转身离开。',
       next: 'chapter_end'

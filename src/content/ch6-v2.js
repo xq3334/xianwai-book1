@@ -16,8 +16,8 @@ export const ch6 = {
 
     observe_linche_xuhe: {
       chars: [
-        { id: 'linche', img: 'linche-whispering', pos: 'left' },
-        { id: 'xuhe', img: 'xuhe-nervous', pos: 'right' }
+        { id: 'linche', img: 'linche', pos: 'left' },
+        { id: 'xuhe', img: 'xuhe-try', pos: 'right' }
       ],
       narrator: true,
       text: '林澈和许禾坐在一起，在小声说话。看到你进来，两人停下了。',
@@ -25,7 +25,7 @@ export const ch6 = {
     },
 
     observe_guyan: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       narrator: true,
       text: '顾言坐在角落，看了你一眼，又移开视线。',
       next: 'inner_what_happened'
@@ -46,9 +46,9 @@ export const ch6 = {
 
     four_gather: {
       chars: [
-        { id: 'linche', img: 'linche-neutral', pos: 'left' },
-        { id: 'guyan', img: 'guyan-male-cold', pos: 'center' },
-        { id: 'xuhe', img: 'xuhe-lowhead', pos: 'right' }
+        { id: 'linche', img: 'linche', pos: 'left' },
+        { id: 'guyan', img: 'guyan', pos: 'center' },
+        { id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }
       ],
       narrator: true,
       text: '四人聚在一起，气氛微妙。',
@@ -56,7 +56,7 @@ export const ch6 = {
     },
 
     linche_announces: {
-      chars: [{ id: 'linche', img: 'linche-presenting', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '"我和许禾讨论了一下，觉得第三部分可以这样改。"' },
       next: 'you_stunned'
     },
@@ -67,31 +67,31 @@ export const ch6 = {
     },
 
     xuhe_answers: {
-      chars: [{ id: 'xuhe', img: 'xuhe-guilty', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '低着头："昨天晚上……"' },
       next: 'linche_casual'
     },
 
     linche_casual: {
-      chars: [{ id: 'linche', img: 'linche-casual', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche', pos: 'left' }],
       dialog: { char: '林澈', text: '"哦，忘了跟你说。反正也不是什么大事。"' },
       next: 'guyan_speaks'
     },
 
     guyan_speaks: {
-      chars: [{ id: 'guyan', img: 'guyan-male-sarcastic', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '突然开口："所以现在你们俩一组，我们俩一组？"' },
       next: 'linche_defends'
     },
 
     linche_defends: {
-      chars: [{ id: 'linche', img: 'linche-defensive', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-plead', pos: 'left' }],
       dialog: { char: '林澈', text: '"不是，我只是——"' },
       next: 'guyan_dismisses'
     },
 
     guyan_dismisses: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '"算了，无所谓。"戴上耳机。' },
       next: 'inner_divided'
     },
@@ -117,7 +117,7 @@ export const ch6 = {
     },
 
     guyan_refugee: {
-      chars: [{ id: 'guyan', img: 'guyan-male-slight-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"来避难？"' },
       next: 'you_bitter_smile'
     },
@@ -128,7 +128,7 @@ export const ch6 = {
     },
 
     guyan_i_told_you: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"我说过吧，许禾那种人，你帮不了的。"' },
       next: 'guyan_new_support'
     },
@@ -154,14 +154,14 @@ export const ch6 = {
 
     defend_self: {
       text: '"我没有背叛任何人。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"我知道。但他们不这么想。"' },
       next: 'guyan_perspective'
     },
 
     self_doubt: {
       text: '"也许我真的做错了。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-disappointed', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '皱眉："你又开始了。"' },
       next: 'guyan_直接'
     },
@@ -173,7 +173,7 @@ export const ch6 = {
 
     ask_guyan: {
       text: '"你怎么看？"',
-      chars: [{ id: 'guyan', img: 'guyan-male-thinking', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-pause', pos: 'center' }],
       dialog: { char: '顾言', text: '"我觉得你做得对。"' },
       next: 'guyan_but'
     },
@@ -184,7 +184,7 @@ export const ch6 = {
     },
 
     guyan_perspective: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"你打破了原来的平衡——林澈掌控，许禾依赖，你顺从，我反抗。"' },
       next: 'guyan_change'
     },
@@ -206,7 +206,7 @@ export const ch6 = {
     },
 
     guyan_water: {
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       narrator: true,
       text: '顾言递给你一瓶水：',
       dialog: { char: '顾言', text: '"坚持住。"' },
@@ -268,7 +268,7 @@ export const ch6 = {
     },
 
     guyan_approaches: {
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '走过来："需要帮忙吗？"' },
       next: 'choice_help'
     },
@@ -284,21 +284,21 @@ export const ch6 = {
 
     accept_help: {
       text: '"好啊。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '点头："走吧。"' },
       next: 'sunday_night'
     },
 
     independent: {
       text: '"我自己来吧。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"行。但有需要随时找我。"' },
       next: 'sunday_night'
     },
 
     question_why: {
       text: '"你为什么要帮我？"',
-      chars: [{ id: 'guyan', img: 'guyan-male-thinking', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-pause', pos: 'center' }],
       dialog: { char: '顾言', text: '愣了一下，然后笑了。' },
       next: 'guyan_reason'
     },
@@ -319,7 +319,7 @@ export const ch6 = {
     },
 
     guyan_shoulder: {
-      chars: [{ id: 'guyan', img: 'guyan-male-gentle', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       narrator: true,
       text: '他拍拍你肩膀：',
       dialog: { char: '顾言', text: '"所以我愿意帮你。"' },

@@ -11,8 +11,8 @@ export const ch4 = {
       bg: 'classroom-tense',
       text: '小组四人都在座位上，但没有人说话。',
       chars: [
-        { id: 'linche', img: 'linche-tired', pos: 'left' },
-        { id: 'xuhe', img: 'xuhe-red-eyes', pos: 'right' }
+        { id: 'linche', img: 'linche-sulk', pos: 'left' },
+        { id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }
       ],
       next: 'observe_tension'
     },
@@ -43,9 +43,9 @@ export const ch4 = {
     take_lead: {
       text: '"我们谈谈吧。"你打破了沉默。',
       chars: [
-        { id: 'linche', img: 'linche-cold', pos: 'left' },
-        { id: 'guyan', img: 'guyan-male-curious', pos: 'center' },
-        { id: 'xuhe', img: 'xuhe-scared', pos: 'right' }
+        { id: 'linche', img: 'linche', pos: 'left' },
+        { id: 'guyan', img: 'guyan-pause', pos: 'center' },
+        { id: 'xuhe', img: 'xuhe-try', pos: 'right' }
       ],
       next: 'three_look_at_you'
     },
@@ -66,8 +66,8 @@ export const ch4 = {
     face_reality: {
       text: '"我觉得这个组不行了。"',
       chars: [
-        { id: 'linche', img: 'linche-shocked', pos: 'left' },
-        { id: 'guyan', img: 'guyan-male-surprised', pos: 'center' }
+        { id: 'linche', img: 'linche-plead', pos: 'left' },
+        { id: 'guyan', img: 'guyan-sharp', pos: 'center' }
       ],
       dialog: { char: '林澈', text: '"你……你什么意思？"' },
       next: 'reality_reaction'
@@ -79,7 +79,7 @@ export const ch4 = {
     },
 
     guyan_removes_earphone: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '摘下耳机："你想说什么？"' },
       next: 'xuhe_silent'
     },
@@ -103,8 +103,8 @@ export const ch4 = {
     admit_共同责任: {
       text: '"我们都有问题，包括我。"',
       chars: [
-        { id: 'linche', img: 'linche-surprised', pos: 'left' },
-        { id: 'guyan', img: 'guyan-male-interested', pos: 'center' }
+        { id: 'linche', img: 'linche-grin', pos: 'left' },
+        { id: 'guyan', img: 'guyan-pause', pos: 'center' }
       ],
       dialog: { char: '林澈', text: '愣住："你有什么问题？"' },
       next: 'continue_confession'
@@ -116,19 +116,19 @@ export const ch4 = {
     },
 
     point_out_linche: {
-      chars: [{ id: 'linche', img: 'linche-uncomfortable', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       text: '"林澈，你确实很负责，但你总是替我们做决定。"',
       next: 'point_out_xuhe'
     },
 
     point_out_xuhe: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       text: '"许禾，你总是希望别人帮你解决问题，但从不自己尝试。"',
       next: 'point_out_guyan'
     },
 
     point_out_guyan: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       text: '"顾言，你看得很清楚，但你用攻击的方式表达。"',
       next: 'point_out_self'
     },
@@ -146,19 +146,19 @@ export const ch4 = {
     },
 
     linche_reaction: {
-      chars: [{ id: 'linche', img: 'linche-sad', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '低下头："……我只是想做好。"' },
       next: 'xuhe_cry_reaction'
     },
 
     xuhe_cry_reaction: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '开始哭："我是不是真的很没用……"' },
       next: 'guyan_question'
     },
 
     guyan_question: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '看着你："然后呢？说完这些，有用吗？"' },
       next: 'choice_after_confession'
     },
@@ -178,14 +178,14 @@ export const ch4 = {
     },
 
     guyan_stares: {
-      chars: [{ id: 'guyan', img: 'guyan-male-thinking', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-pause', pos: 'center' }],
       narrator: true,
       text: '顾言盯着你看了很久。',
       next: 'guyan_proposes_rules'
     },
 
     guyan_proposes_rules: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"……行。那我说个规矩。"' },
       next: 'new_rule_1'
     },
@@ -196,25 +196,25 @@ export const ch4 = {
     },
 
     linche_asks: {
-      chars: [{ id: 'linche', img: 'linche-uncertain', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche', pos: 'left' }],
       dialog: { char: '林澈', text: '"那万一意见不统一呢？"' },
       next: 'guyan_voting'
     },
 
     guyan_voting: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '"投票。少数服从多数，但多数要尊重少数的不满。"' },
       next: 'xuhe_scared_ask'
     },
 
     xuhe_scared_ask: {
-      chars: [{ id: 'xuhe', img: 'xuhe-scared', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '小声说："那……那我也要说出来吗？"' },
       next: 'guyan_else'
     },
 
     guyan_else: {
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '"不然呢？"' },
       next: 'atmosphere_easing'
     },
@@ -226,13 +226,13 @@ export const ch4 = {
     },
 
     linche_苦笑: {
-      chars: [{ id: 'linche', img: 'linche-bitter-smile', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '苦笑："听起来很理想主义。"' },
       next: 'guyan_better'
     },
 
     guyan_better: {
-      chars: [{ id: 'guyan', img: 'guyan-male-slight-smile', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '"总比现在这样好。"' },
       next: 'guyan_asks_you'
     },
@@ -257,7 +257,7 @@ export const ch4 = {
     },
 
     linche_nods: {
-      chars: [{ id: 'linche', img: 'linche-slight-smile', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '点点头："那就这样吧。"' },
       next: 'first_practice'
     },
@@ -271,7 +271,7 @@ export const ch4 = {
     friday_discussion: {
       bg: 'classroom-afternoon',
       text: '小组讨论时间。',
-      chars: [{ id: 'linche', img: 'linche-presenting', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '"我觉得我们可以这样分工——"' },
       next: 'linche_stops'
     },
@@ -279,7 +279,7 @@ export const ch4 = {
     linche_stops: {
       narrator: true,
       text: '然后他停住，看着大家：',
-      chars: [{ id: 'linche', img: 'linche-asking', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche', pos: 'left' }],
       dialog: { char: '林澈', text: '"你们觉得呢？"' },
       next: 'first_time_asking'
     },
@@ -292,26 +292,26 @@ export const ch4 = {
     },
 
     guyan_disagrees: {
-      chars: [{ id: 'guyan', img: 'guyan-male-serious', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       dialog: { char: '顾言', text: '"我不同意第三部分的安排。"' },
       next: 'linche_deep_breath'
     },
 
     linche_deep_breath: {
-      chars: [{ id: 'linche', img: 'linche-nervous', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-sulk', pos: 'left' }],
       dialog: { char: '林澈', text: '深吸一口气："为什么？"' },
       next: 'guyan_explains'
     },
 
     guyan_explains: {
-      chars: [{ id: 'guyan', img: 'guyan-male-explaining', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-sharp', pos: 'center' }],
       narrator: true,
       text: '顾言解释了他的理由。讨论很激烈，但没有人摔门。',
       next: 'xuhe_breakthrough'
     },
 
     xuhe_breakthrough: {
-      chars: [{ id: 'xuhe', img: 'xuhe-nervous', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '突然说："我……我也有个想法。"' },
       next: 'three_look_at_xuhe'
     },
@@ -323,20 +323,20 @@ export const ch4 = {
     },
 
     xuhe_persists: {
-      chars: [{ id: 'xuhe', img: 'xuhe-speaking-nervous', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       narrator: true,
       text: '她声音很小，但坚持说完了。',
       next: 'linche_praise'
     },
 
     linche_praise: {
-      chars: [{ id: 'linche', img: 'linche-smile', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '"这个点子不错。"' },
       next: 'guyan_nods'
     },
 
     guyan_nods: {
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '点头："可以试试。"' },
       next: 'xuhe_eyes_light'
     },
@@ -363,7 +363,7 @@ export const ch4 = {
     },
 
     mom_question: {
-      chars: [{ id: 'mom', img: 'mom-concerned', pos: 'center' }],
+      chars: [{ id: 'mom', img: 'mother-worry', pos: 'center' }],
       dialog: { char: '妈妈', text: '"你最近怎么总是愁眉苦脸的？"' },
       next: 'mom_continues'
     },
@@ -384,7 +384,7 @@ export const ch4 = {
 
     confess_to_mom: {
       text: '"妈，我不想当心理委员了。"',
-      chars: [{ id: 'mom', img: 'mom-shocked', pos: 'center' }],
+      chars: [{ id: 'mom', img: 'mother', pos: 'center' }],
       dialog: { char: '妈妈', text: '愣住："什么？你说什么？"' },
       next: 'mom_pressure'
     },
@@ -405,7 +405,7 @@ export const ch4 = {
     },
 
     mom_cuts: {
-      chars: [{ id: 'mom', img: 'mom-stern', pos: 'center' }],
+      chars: [{ id: 'mom', img: 'mother-upset', pos: 'center' }],
       dialog: { char: '妈妈', text: '"没有可是。你必须做下去。这是你的责任。"' },
       next: 'inner_mom_never_asks'
     },
@@ -423,7 +423,7 @@ export const ch4 = {
     },
 
     mom_committee_talk: {
-      chars: [{ id: 'mom', img: 'mom-proud', pos: 'center' }],
+      chars: [{ id: 'mom', img: 'mother', pos: 'center' }],
       dialog: { char: '妈妈', text: '"你是心理委员，不是应该很擅长处理人际关系吗？"' },
       next: 'mom_boasts'
     },
@@ -497,13 +497,13 @@ export const ch4 = {
 
     apologize_first: {
       text: '"昨天的事……对不起。"',
-      chars: [{ id: 'linche', img: 'linche-surprised', pos: 'left' }],
+      chars: [{ id: 'linche', img: 'linche-grin', pos: 'left' }],
       dialog: { char: '林澈', text: '"你道什么歉？又不是你的错。"' },
       next: 'xuhe_cries_again'
     },
 
     xuhe_cries_again: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '又开始哭："都是我不好……"' },
       next: 'group_comforts'
     },
@@ -517,7 +517,7 @@ export const ch4 = {
     want_to_quit: {
       text: '"我想退出。"',
       chars: [
-        { id: 'linche', img: 'linche-shocked', pos: 'left' },
+        { id: 'linche', img: 'linche-plead', pos: 'left' },
         { id: 'guyan', img: 'guyan-male-disappointed', pos: 'center' }
       ],
       dialog: { char: '林澈', text: '"你……认真的？"' },
@@ -541,7 +541,7 @@ export const ch4 = {
     },
 
     guyan_nods_slow: {
-      chars: [{ id: 'guyan', img: 'guyan-male-approving', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan-soft', pos: 'center' }],
       dialog: { char: '顾言', text: '缓缓点头："……也对。"' },
       next: 'first_practice'
     },
@@ -553,7 +553,7 @@ export const ch4 = {
 
     doubt_execution: {
       text: '"但执行起来很难。"',
-      chars: [{ id: 'guyan', img: 'guyan-male-cold', pos: 'center' }],
+      chars: [{ id: 'guyan', img: 'guyan', pos: 'center' }],
       dialog: { char: '顾言', text: '"不试怎么知道？"' },
       next: 'first_practice'
     },

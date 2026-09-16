@@ -5,7 +5,7 @@ export const ch5 = {
     start: {
       bg: 'counseling-room',
       text: '心理咨询室。阳光透过窗帘洒进来，沈老师递给你一杯热茶。',
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       next: 'teacher_question'
     },
 
@@ -24,19 +24,19 @@ export const ch5 = {
     },
 
     wrong_understanding: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-smile', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-nod', pos: 'center' }],
       dialog: { char: '沈老师', text: '笑了："不是。是\'观察\'和\'上报\'。"' },
       next: 'explain_duty'
     },
 
     ask_guidance: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '"那让我告诉你——心理委员的职责是\'观察\'和\'上报\'。"' },
       next: 'explain_duty'
     },
 
     listen_silently: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '欣赏地看着你："心理委员的职责是\'观察\'和\'上报\'。"' },
       next: 'explain_duty'
     },
@@ -52,7 +52,7 @@ export const ch5 = {
     },
 
     teacher_asks_question: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-serious', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '沈老师', text: '"我问你一个问题。"' },
       next: 'philosophical_question'
     },
@@ -69,7 +69,7 @@ export const ch5 = {
     },
 
     teacher_answers: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '"是他们的。不是你的。"' },
       next: 'task_separation_explain'
     },
@@ -102,21 +102,21 @@ export const ch5 = {
 
     surface_understanding: {
       text: '"我明白了。"',
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '看着你，没说话。她知道你还没真正理解。' },
       next: 'days_pass'
     },
 
     worried: {
       text: '"但如果我不帮，他们会怎么样？"',
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-smile', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-nod', pos: 'center' }],
       dialog: { char: '沈老师', text: '"这个担心本身，就是在承担他们的课题。"' },
       next: 'deeper_explanation'
     },
 
     epiphany: {
       text: '"所以我一直在做他们该做的事？"',
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-approving', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-nod', pos: 'center' }],
       dialog: { char: '沈老师', text: '点头："对。而且你知道最可怕的是什么吗？"' },
       next: 'most_terrible'
     },
@@ -148,7 +148,7 @@ export const ch5 = {
     },
 
     final_blow: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-serious', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen-ask', pos: 'center' }],
       dialog: { char: '沈老师', text: '"你不是在帮他们。你是在满足自己\'被需要\'的感觉。"' },
       next: 'inner_hit'
     },
@@ -161,7 +161,7 @@ export const ch5 = {
     },
 
     deeper_explanation: {
-      chars: [{ id: 'teacher-shen', img: 'teacher-shen-gentle', pos: 'center' }],
+      chars: [{ id: 'teacher-shen', img: 'shen', pos: 'center' }],
       dialog: { char: '沈老师', text: '"他们会面对自己的问题，学会成长。或者不学会，继续挣扎。"' },
       next: 'whose_task_is_it'
     },
@@ -179,7 +179,7 @@ export const ch5 = {
     },
 
     xuhe_approaches: {
-      chars: [{ id: 'xuhe', img: 'xuhe-sad', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '又来找你："那几个女生还是不理我……你能再帮我看看吗？"' },
       next: 'remember_teacher'
     },
@@ -202,7 +202,7 @@ export const ch5 = {
 
     old_pattern: {
       text: '"好，我再观察一下。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-relieved', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-happy', pos: 'right' }],
       narrator: true,
       text: '许禾松了口气。你又回到了旧模式。',
       next: 'inner_failed'
@@ -217,13 +217,13 @@ export const ch5 = {
 
     cold_refusal: {
       text: '"这是你的课题，我帮不了你。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-shocked', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '愣住："你……"' },
       next: 'xuhe_hurt_reaction'
     },
 
     xuhe_hurt_reaction: {
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       dialog: { char: '许禾', text: '"所以你真的不管我了……"' },
       next: 'xuhe_leaves_crying'
     },
@@ -243,7 +243,7 @@ export const ch5 = {
 
     guide_thinking: {
       text: '"你觉得自己可以做些什么？"',
-      chars: [{ id: 'xuhe', img: 'xuhe-confused', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '愣住："我……我不知道。"' },
       next: 'continue_guiding'
     },
@@ -256,7 +256,7 @@ export const ch5 = {
 
     ask_directly: {
       text: '"你有没有问过她们？"',
-      chars: [{ id: 'xuhe', img: 'xuhe-scared', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       dialog: { char: '许禾', text: '"我不敢……"' },
       next: 'clarify_help'
     },
@@ -269,7 +269,7 @@ export const ch5 = {
 
     set_boundary: {
       text: '你深吸一口气："不能。但我可以陪你一起去问。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-shocked', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-try', pos: 'right' }],
       next: 'xuhe_reaction'
     },
 
@@ -280,7 +280,7 @@ export const ch5 = {
 
     firm_boundary: {
       text: '你摇头："这是你的问题，你要自己面对。"',
-      chars: [{ id: 'xuhe', img: 'xuhe-crying', pos: 'right' }],
+      chars: [{ id: 'xuhe', img: 'xuhe-sorry', pos: 'right' }],
       next: 'xuhe_cries'
     },
 
