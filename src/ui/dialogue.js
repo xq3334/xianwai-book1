@@ -76,9 +76,12 @@ export function renderChoices(node, onChoice) {
   document.getElementById('choices-prompt').textContent = node.prompt || '你会怎么做？';
   
   const choiceList = document.getElementById('choice-list');
-  choiceList.innerHTML = node.choices.map((choice, idx) => 
-    `<li><button data-choice="${idx}">${choice.text}</button></li>`
-  ).join('');
+  // 兼容两种格式：choices/options 和 text/label
+  const choicesArray = node.choices || node.options;
+  choiceList.innerHTML = choicesArray.map((choice, idx) => {
+    const text = choice.text || choice.label;
+    return `<li><button data-choice="${idx}">${text}</button></li>`;
+  }).join('');
 
   choiceList.onclick = (e) => {
     const idx = e.target.dataset.choice;

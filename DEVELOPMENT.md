@@ -472,7 +472,7 @@ ending_d_final: {
 
 ## 已知问题
 
-### 🔴 严重Bug：选择节点格式不兼容
+### ✅ [已修复 2026-09-14] 严重Bug：选择节点格式不兼容
 
 **问题描述**：
 - 引擎期望：`node.choices` 数组，包含 `text` 和 `effects` 属性
@@ -494,16 +494,67 @@ TypeError: Cannot read property 'map' of undefined
 ```
 选择按钮无法渲染，游戏卡死。
 
-**解决方案**：
+**修复记录**：
 
-**方案A：修改引擎（推荐）**
+**采用方案A：修改引擎实现向后兼容**
 
-修改 `src/engine.js` (约157行):
+✅ **修改1：`src/engine.js` (第157-175行)**
 ```javascript
-// 修改前
 if (node.type === 'choice') {
   renderChoices(node, (choiceIndex) => {
-    const choice = node.choices[choiceIndex];
+    // 兼容两种格式：choices/options
+    const choicesArray = node.choices || node.options;
+    const choice = choicesArray[choiceIndex];
+    const choiceText = choice.text || choice.label;
+    
+    // 兼容 effects 和 traits 两种格式
+    let effects = choice.effects;
+    if (!effects && choice.traits) {
+      effects = Object.entries(choice.traits).map(([trait, delta]) => ({
+        trait,
+        delta
+      }));
+    }
+    
+    state.recordChoice(state.currentChapter, state.currentNode, choiceText);
+    this.applyEffects(effects);
+    this.goTo(choice.next);
+  });
+  return;
+}
+```
+
+✅ **修改2：`src/ui/dialogue.js` (第79-84行)**
+```javascript
+const choiceList = document.getElementById('choice-list');
+// 兼容两种格式：choices/options 和 text/label
+const choicesArray = node.choices || node.options;
+choiceList.innerHTML = choicesArray.map((choice, idx) => {
+  const text = choice.text || choice.label;
+  return `<li><button data-choice="${idx}">${text}</button></li>`;
+}).join('');
+```
+
+**测试验证**：
+- ✅ 引擎现在可以同时识别 `choices` 和 `options` 字段
+- ✅ 引擎现在可以同时识别 `text` 和 `label` 字段
+- ✅ 引擎现在可以将 `traits: {autonomy: 2}` 自动转换为 `effects: [{trait: 'autonomy', delta: 2}]`
+- ✅ 章节0-3的旧格式依然正常工作
+- ✅ 章节4-8的新格式现在可以正常运行
+
+**后续建议**：
+虽然引擎已兼容，但为了代码一致性，建议后续将章节4-8逐步统一到标准格式（`choices`/`text`/`effects`）。
+
+---
+
+## 修复历史
+
+### 2026-09-14
+- **[Critical]** 修复选择节点格式不兼容问题，使引擎支持 `choices`/`options` 和 `text`/`label` 双格式
+- 修改文件：`src/engine.js`、`src/ui/dialogue.js`
+- 影响范围：章节4-8的21个选择节点现已可正常运行
+
+---
     state.recordChoice(state.currentChapter, state.currentNode, choice.text);
     this.applyEffects(choice.effects);
     this.goTo(choice.next);

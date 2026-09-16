@@ -154,9 +154,22 @@ export const engine = {
 
     if (node.type === 'choice') {
       renderChoices(node, (choiceIndex) => {
-        const choice = node.choices[choiceIndex];
-        state.recordChoice(state.currentChapter, state.currentNode, choice.text);
-        this.applyEffects(choice.effects);
+        // 兼容两种格式：choices/options
+        const choicesArray = node.choices || node.options;
+        const choice = choicesArray[choiceIndex];
+        const choiceText = choice.text || choice.label;
+        
+        // 兼容 effects 和 traits 两种格式
+        let effects = choice.effects;
+        if (!effects && choice.traits) {
+          effects = Object.entries(choice.traits).map(([trait, delta]) => ({
+            trait,
+            delta
+          }));
+        }
+        
+        state.recordChoice(state.currentChapter, state.currentNode, choiceText);
+        this.applyEffects(effects);
         this.goTo(choice.next);
       });
       return;
